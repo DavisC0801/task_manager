@@ -6,4 +6,16 @@ class TasksController < ApplicationController
   def new
 
   end
+
+  def create
+    #params available here are passed as a hash from the page routed here, and any inputs from there such as a form.
+    task = Task.new({
+      title: params[:task][:title]
+      description: params[:task][:description]
+    })
+
+    task.save
+
+    redirect_to '/tasks'
+  end
 end
