@@ -5,6 +5,8 @@
     <title>Task Manager</title>
   </head>
   <body>
-    <%= @tasks %>
+    <% @tasks.each do |task| %>
+    <h3><%= task %></h3>
+    <% end %>
   </body>
 </html>
